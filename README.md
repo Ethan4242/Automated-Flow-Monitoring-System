@@ -37,7 +37,7 @@ Multiple Reaction Files
 
 
 ## Installation and Configuration
-	This section describes how to download the software package to your local computer and how to configure the different settings files for use of the program.
+This section describes how to download the software package to your local computer and how to configure the different settings files for use of the program.
 
 Installing From Github
 Go to the github page with the software: https://github.com/Ethan4242/Autonomous-Flow-Monitoring-System or search for the Autonomous Flow Monitoring System on github
@@ -57,11 +57,11 @@ For Windows users, the main trick when installing python is ensuring that the co
 If the computer outputs a Python version but it is 2.x, then this means you have the older version of python, which does not work with this program. I would recommend searching the web for a way of updating to the newer version.
 
 ### Configuring your AFMS System
-	This section will describe what should be put into the Settings Folder of the software package. 
+This section will describe what should be put into the Settings Folder of the software package. 
 
 *Filenames.txt*
 
-	This file is used as the initialization file for the other files in the program. Its main purpose is to give more flexibility for another developer to change how files are accessed, how many are accessed, and where they are stored later on. If you would like to have the other files saved in a different location, then all you need to do is change the relative (to the python program) file path of each in this file. For example the defaults are as listed below..
+This file is used as the initialization file for the other files in the program. Its main purpose is to give more flexibility for another developer to change how files are accessed, how many are accessed, and where they are stored later on. If you would like to have the other files saved in a different location, then all you need to do is change the relative (to the python program) file path of each in this file. For example the defaults are as listed below..
 
 1) Reaction Inputs
 ./Reactions/ReactionInput.csv
@@ -91,9 +91,13 @@ Max Flow 2: 30
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
 *Name:* This is the user defined name and will be used to refer to this controller for remainder of the program.
+
 *Port:* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
+
 *Node:* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
+
 *Max Flow:* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
+
 
 *Settings/UserComm.txt*
 
