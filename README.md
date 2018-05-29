@@ -79,20 +79,31 @@ This is an important file for this software package! This file contains the node
 Initialize each controller as specified below..
 
 Name 1: CO2 
+
 Port 1:  COM3
+
 Node 1: 10 
+
 Max Flow 1: 100 
+
 Name 2: O2 
+
 Port 2: COM6
+
 Node 2: 20 
+
 Max Flow 2: 30
+
 ……….
 
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
 *_Name:_* This is the user defined name and will be used to refer to this controller for remainder of the program.
+
 *_Port:_* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
+
 *_Node:_* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
+
 *_Max Flow:_* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
 
 
@@ -104,31 +115,39 @@ This file holds the emails that are options for the email notification feature. 
 ## Software Usage
 This section describes how to format your Reaction file to be run by the software and then actually run the program. There can be an arbitrary number of reaction files, and the user is prompted to specify which one they would like to use once the program begins.
 
-Saving the File
-	The file must be saved in the location specified in the filenames.txt file. The rest of this manual will assume that the file is saved in the default location: ./Reactions.
+#### Saving the File
+The file must be saved in the location specified in the filenames.txt file. The rest of this manual will assume that the file is saved in the default location: ./Reactions.
 
-Formatting The Reaction Input File
-	Below is a sample Reaction that is ready to be run. Please note that the format needs to be identical to this format for the program to be able to read the file. Additionally, make sure to save the file as a .csv file.
+#### Formatting The Reaction Input File
+Below is a sample Reaction that is ready to be run. Please note that the format needs to be identical to this format for the program to be able to read the file. Additionally, make sure to save the file as a .csv file.
 
 
 
-Headings
+*_Headings_*
+
 The headings do not need to be the same as specified above, although the last cell in the first row (F1) needs to have END in it somewhere. This allows the program to know whether you are specifying another time interval or ending the program.
 
-Controller Names
-	The controller names allow the program to determine which microcontroller you are referring to with a simple name. The controller names in column A need to be the same as those specified in the BronkhorstConfig.txt file, and ALL of the names need to be specified. If a name is specified in the Config file and not the ReactionInput file, then the program will throw an error (and vice versa). I would recommend to keep all of the controller names in the ReactionFile and just set their flows to 0 when you are not using them.
+*_Controller Names_*
 
-Emergency Flow Controls
-	The emergency flows are the flows that the controllers switch to if there is a major error during the reaction, such as if there is not enough gas in one of the tanks to continue the reaction. The flows will be switched to the emergency flows, an email will be sent, and the program will cease to run. The second column always needs to remain the emergency flows column. 
+The controller names allow the program to determine which microcontroller you are referring to with a simple name. The controller names in column A need to be the same as those specified in the BronkhorstConfig.txt file, and ALL of the names need to be specified. If a name is specified in the Config file and not the ReactionInput file, then the program will throw an error (and vice versa). I would recommend to keep all of the controller names in the ReactionFile and just set their flows to 0 when you are not using them.
 
-Time Change Flows
-	The main flows are the flows each controller is set to until the next flow change is specified. In the first row, between the emergency flow column and the END column, are the time changes for the flows. Below these times are the corresponding flows for each controller at that specific time.
-	The times in the first row is the time elapsed since the reaction started in fractions of an hour. Thus 0.0333 is 2 minutes and 2.5 is 2 hours and 30 minutes. Please note that you must specify the flows at 0 elapsed times, which are the initial reaction flows. Also note that the last time you specify are the ending flows. These ending flows will continue indefinitely until the user starts a new reaction or shuts them off manually.
-	The flows below a given elapsed time are the flows the controllers will switch to after that amount of time has elapsed since the reaction started. Each controller needs a flow during every specified time, even if it is just 0. If a flow is not specified, then the program will not be able to read the file.
+*_Emergency Flow Controls_*
+
+The emergency flows are the flows that the controllers switch to if there is a major error during the reaction, such as if there is not enough gas in one of the tanks to continue the reaction. The flows will be switched to the emergency flows, an email will be sent, and the program will cease to run. The second column always needs to remain the emergency flows column. 
+
+*_Time Change Flows_*
+
+The main flows are the flows each controller is set to until the next flow change is specified. In the first row, between the emergency flow column and the END column, are the time changes for the flows. Below these times are the corresponding flows for each controller at that specific time.
+
+The times in the first row is the time elapsed since the reaction started in fractions of an hour. Thus 0.0333 is 2 minutes and 2.5 is 2 hours and 30 minutes. Please note that you must specify the flows at 0 elapsed times, which are the initial reaction flows. Also note that the last time you specify are the ending flows. These ending flows will continue indefinitely until the user starts a new reaction or shuts them off manually.
+
+The flows below a given elapsed time are the flows the controllers will switch to after that amount of time has elapsed since the reaction started. Each controller needs a flow during every specified time, even if it is just 0. If a flow is not specified, then the program will not be able to read the file.
 
 ### Running a Reaction
-Executing Program
-	At the point of writing this manual, the only way of running this program is via the command line. Thus to execute the program, you will need to navigate to the folder containing Reaction.py. 
+
+*_Executing Program_*
+
+At the point of writing this manual, the only way of running this program is via the command line. Thus to execute the program, you will need to navigate to the folder containing Reaction.py. 
 For example, the sequence might be for a Windows user..
 
 * “Dir”
