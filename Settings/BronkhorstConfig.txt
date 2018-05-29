@@ -1,0 +1,24 @@
+Name 1: NO 
+Port 1: COM3
+Node 1: 10 
+Max Flow 1: 100 
+Name 2: O2
+Port 2: COM3
+Node 2: 20
+Max Flow 2: 30
+Name 3: C3H6
+Port 3: COM3
+Node 3: 30
+Max Flow 3: 60
+Name 4: N2
+Port 4: COM3
+Node 4: 40
+Max Flow 4: 100
+Name 5: EtCl
+Port 5: COM3
+Node 5: 50
+Max Flow 5: 100
+Name 6: CO2 
+Port 6: COM6
+Node 6: 3 
+Max Flow 6: 15 
