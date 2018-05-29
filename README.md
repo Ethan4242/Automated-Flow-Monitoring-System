@@ -18,27 +18,27 @@ Ethan Young
 
 
 ## Notable Features
-*Automated Mass Flow Changes*
+**Automated Mass Flow Changes**
 
 The main focus of this software project was to create an easy-to-use software system to control Bronkhorst Mass Flow Controllers. This software allows for the operation of these controllers in an arbitrary length series, and even allows for control across multiple ports. 
 
 For example, the researcher that inspired this software uses it to run 8 hour, sometimes overnight, reactions with flow changes every 21 minutes.
 
-*Email Notifications*
+**Email Notifications**
 
 In the UserComm.txt file, it is possible to specify various emails that can be notified about important events during your reaction. At the commencement of the program, it prompts the user to pick an email from the list specified in the file. The program will then send a notification to the specified email when either the reaction successfully completed or there was an error in the reaction. 
 
-*Emergency Flows*
+**Emergency Flows**
 
 Because of the dangerous nature of some reactions, it is important that if anything goes wrong the program is able to detect it and correct for it before the situation becomes more dangerous. The two main cases that the program accounts for in terms of error handling of flows is if a flow does not reach the specified flow or over shoots the expected flow. Both can be dangerous. 
 
 Some possible causes could be a flow that is above the maximum of the controller, a controller malfunction, or a canister of gas runs low. Regardless of the cause, it is useful to be able to have a set of flow rates that will be switched to in case of a reaction failure.
 
-*Logging*
+**Logging**
 
 Accurate logs with Timestamps are important in chemistry research, specifically for process validation and for cross referencing to other systems in use. For example, the research for which this software was developed used a GC-MS afterwards, so it was helpful to be able to know the time that the flows changed to cross reference with the GC.
 
-*Multiple Reaction Files*
+**Multiple Reaction Files**
 
 Allowing for multiple reaction files in the Reactions folder helps in creating a more accurate and efficient process for reactions for a researcher. Being able to create reaction files ahead of time saves time for the researcher and increase the overall usability of the system.
 
@@ -67,7 +67,7 @@ This project can be used with any variant of python 3.x. To ensure that python i
 #### Configuring your AFMS System
 This section will describe what should be put into the Settings Folder of the software package. 
 
-*Filenames.txt*
+**Filenames.txt**
 
 This file is used as the initialization file for the other files in the program. Its main purpose is to give more flexibility for another developer to change how files are accessed, how many are accessed, and where they are stored later on. If you would like to have the other files saved in a different location, then all you need to do is change the relative (to the python program) file path of each in this file. For example the defaults are as listed below..
 
@@ -80,7 +80,7 @@ This file is used as the initialization file for the other files in the program.
 
 If you do not wish to move around the file storage structure of this software, then leave this file as-is.
 
-*BronkhorstConfig.txt*
+**BronkhorstConfig.txt**
 
 This is an important file for this software package! This file contains the node address of each microcontroller, the maximum flow for each controller, and the user specified name for each controller. Please note: Any controller you indicate here, also needs to be added to the Reactions file, but that will be for a later section.
 
@@ -114,7 +114,7 @@ There can be an arbitrary number of controllers that are spread over an arbitrar
 *_Max Flow:_* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
 
 
-*Settings/UserComm.txt*
+**Settings/UserComm.txt**
 
 This file holds the emails that are options for the email notification feature. The program will prompt the user to specify which email to notify from the list in this file. The number of emails can be arbitrary, although only one can be notified on a given reaction.
 
@@ -130,19 +130,19 @@ Below is a sample Reaction that is ready to be run. Please note that the format 
 
 
 
-*_Headings_*
+**_Headings_**
 
 The headings do not need to be the same as specified above, although the last cell in the first row (F1) needs to have END in it somewhere. This allows the program to know whether you are specifying another time interval or ending the program.
 
-*_Controller Names_*
+**_Controller Names_**
 
 The controller names allow the program to determine which microcontroller you are referring to with a simple name. The controller names in column A need to be the same as those specified in the BronkhorstConfig.txt file, and ALL of the names need to be specified. If a name is specified in the Config file and not the ReactionInput file, then the program will throw an error (and vice versa). I would recommend to keep all of the controller names in the ReactionFile and just set their flows to 0 when you are not using them.
 
-*_Emergency Flow Controls_*
+**_Emergency Flow Controls_**
 
 The emergency flows are the flows that the controllers switch to if there is a major error during the reaction, such as if there is not enough gas in one of the tanks to continue the reaction. The flows will be switched to the emergency flows, an email will be sent, and the program will cease to run. The second column always needs to remain the emergency flows column. 
 
-*_Time Change Flows_*
+**_Time Change Flows_**
 
 The main flows are the flows each controller is set to until the next flow change is specified. In the first row, between the emergency flow column and the END column, are the time changes for the flows. Below these times are the corresponding flows for each controller at that specific time.
 
@@ -152,7 +152,7 @@ The flows below a given elapsed time are the flows the controllers will switch t
 
 #### Running a Reaction
 
-*_Executing Program_*
+**_Executing Program_**
 
 At the point of writing this manual, the only way of running this program is via the command line. Thus to execute the program, you will need to navigate to the folder containing Reaction.py. 
 For example, the sequence might be for a Windows user..
