@@ -90,13 +90,10 @@ Max Flow 2: 30
 
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
-*Name:* This is the user defined name and will be used to refer to this controller for remainder of the program.
-
-*Port:* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
-
-*Node:* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
-
-*Max Flow:* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
+*_Name:_* This is the user defined name and will be used to refer to this controller for remainder of the program.
+*_Port:_* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
+*_Node:_* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
+*_Max Flow:_* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
 
 
 *Settings/UserComm.txt*
