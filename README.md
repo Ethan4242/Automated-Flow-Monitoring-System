@@ -15,7 +15,7 @@ Sincerely,
 
 Ethan Young
 
-##Notable Features
+#Notable Features
 Automated Mass Flow Changes
 	The main focus of this software project was to create an easy-to-use software system to control Bronkhorst Mass Flow Controllers. This software allows for the operation of these controllers in an arbitrary length series, and even allows for control across multiple ports. 
 For example, the researcher that inspired this software uses it to run 8 hour, sometimes overnight, reactions with flow changes every 21 minutes.
