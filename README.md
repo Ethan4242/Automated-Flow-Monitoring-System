@@ -34,7 +34,7 @@ Multiple Reaction Files
 	Allowing for multiple reaction files in the Reactions folder helps in creating a more accurate and efficient process for reactions for a researcher. Being able to create reaction files ahead of time saves time for the researcher and increase the overall usability of the system.
 
 
-Installation and Configuration
+## Installation and Configuration
 	This section describes how to download the software package to your local computer and how to configure the different settings files for use of the program.
 
 Installing From Github
@@ -54,10 +54,10 @@ If the computer says that it does not recognize the command “python”, this m
 For Windows users, the main trick when installing python is ensuring that the correct PATH to python is specified for the OS.
 If the computer outputs a Python version but it is 2.x, then this means you have the older version of python, which does not work with this program. I would recommend searching the web for a way of updating to the newer version.
 
-Configuring your AFMS System
+### Configuring your AFMS System
 	This section will describe what should be put into the Settings Folder of the software package. 
 
-Filenames.txt
+*Filenames.txt*
 	This file is used as the initialization file for the other files in the program. Its main purpose is to give more flexibility for another developer to change how files are accessed, how many are accessed, and where they are stored later on. If you would like to have the other files saved in a different location, then all you need to do is change the relative (to the python program) file path of each in this file. For example the defaults are as listed below..
 
 1) Reaction Inputs
@@ -94,7 +94,7 @@ Settings/UserComm.txt
 	This file holds the emails that are options for the email notification feature. The program will prompt the user to specify which email to notify from the list in this file. The number of emails can be arbitrary, although only one can be notified on a given reaction.
 
 
-Software Usage
+## Software Usage
 	This section describes how to format your Reaction file to be run by the software and then actually run the program. There can be an arbitrary number of reaction files, and the user is prompted to specify which one they would like to use once the program begins.
 
 Saving the File
@@ -119,12 +119,12 @@ Time Change Flows
 	The times in the first row is the time elapsed since the reaction started in fractions of an hour. Thus 0.0333 is 2 minutes and 2.5 is 2 hours and 30 minutes. Please note that you must specify the flows at 0 elapsed times, which are the initial reaction flows. Also note that the last time you specify are the ending flows. These ending flows will continue indefinitely until the user starts a new reaction or shuts them off manually.
 	The flows below a given elapsed time are the flows the controllers will switch to after that amount of time has elapsed since the reaction started. Each controller needs a flow during every specified time, even if it is just 0. If a flow is not specified, then the program will not be able to read the file.
 
-Running a Reaction
+### Running a Reaction
 Executing Program
 	At the point of writing this manual, the only way of running this program is via the command line. Thus to execute the program, you will need to navigate to the folder containing Reaction.py. 
 For example, the sequence might be for a Windows user..
 
-“Dir”
+* “Dir”
 “Cd Desktop”
 “Dir”
 “Cd FlowSoftware”
