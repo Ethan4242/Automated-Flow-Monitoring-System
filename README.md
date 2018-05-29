@@ -78,15 +78,15 @@ This is an important file for this software package! This file contains the node
 
 Initialize each controller as specified below..
 
-   Name 1: CO2 
-   Port 1:  COM3
-   Node 1: 10 
-   Max Flow 1: 100 
-   Name 2: O2 
-   Port 2: COM6
-   Node 2: 20 
-   Max Flow 2: 30
-   ……….
+  Name 1: CO2
+  Port 1:  COM3
+  Node 1: 10
+  Max Flow 1: 100 
+  Name 2: O2
+  Port 2: COM6
+  Node 2: 20
+  Max Flow 2: 30
+  ………
 
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
