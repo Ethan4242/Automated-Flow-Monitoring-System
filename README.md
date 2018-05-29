@@ -77,7 +77,6 @@ If you do not wish to move around the file storage structure of this software, t
 This is an important file for this software package! This file contains the node address of each microcontroller, the maximum flow for each controller, and the user specified name for each controller. Please note: Any controller you indicate here, also needs to be added to the Reactions file, but that will be for a later section.
 
 Initialize each controller as specified below..
-
   Name 1: CO2
   Port 1:  COM3
   Node 1: 10
@@ -91,11 +90,8 @@ Initialize each controller as specified below..
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
 *_Name:_* This is the user defined name and will be used to refer to this controller for remainder of the program.
-
 *_Port:_* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
-
 *_Node:_* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
-
 *_Max Flow:_* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
 
 
