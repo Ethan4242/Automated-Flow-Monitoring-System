@@ -49,10 +49,10 @@ This section describes how to download the software package to your local comput
 **Installing From Github**
 Go to the github page with the software: https://github.com/Ethan4242/Autonomous-Flow-Monitoring-System or search for the Autonomous Flow Monitoring System on github
 
-Download the files to your local computer
-Click the green “Clone or Download” button and do one of the options below..
-Download the zip file and extract it into the desired place on your computer (This manual will assume you extracted it to your desktop)
-Git clone the files onto your computer by navigating to the folder you would you like to save the files in terminal (or command prompt for Windows), then copy the link in the clone or download box, then type in terminal (for example)..
+  * Download the files to your local computer
+  * Click the green “Clone or Download” button and do one of the options below..
+  * Download the zip file and extract it into the desired place on your computer (This manual will assume you extracted it to your desktop)
+  * Git clone the files onto your computer by navigating to the folder you would you like to save the files in terminal (or command prompt for Windows), then copy the link in the clone or download box, then type in terminal (for example)..
 git clone https://github.com/Ethan4242/Autonomous-Flow-Monitoring-System.git
 
 **Confirming Correct Python Version**
