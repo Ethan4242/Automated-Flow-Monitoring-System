@@ -1,0 +1,6 @@
+1) Reaction Inputs
+./Reactions/ReactionInput.csv
+2) Bronkhorst Settings
+./Settings/BronkhorstConfig.txt
+3) User Communication
+./Settings/UserComm.txt
