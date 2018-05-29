@@ -18,28 +18,35 @@ Ethan Young
 
 
 ## Notable Features
-Automated Mass Flow Changes
-	The main focus of this software project was to create an easy-to-use software system to control Bronkhorst Mass Flow Controllers. This software allows for the operation of these controllers in an arbitrary length series, and even allows for control across multiple ports. 
+*Automated Mass Flow Changes*
+
+The main focus of this software project was to create an easy-to-use software system to control Bronkhorst Mass Flow Controllers. This software allows for the operation of these controllers in an arbitrary length series, and even allows for control across multiple ports. 
+
 For example, the researcher that inspired this software uses it to run 8 hour, sometimes overnight, reactions with flow changes every 21 minutes.
 
-Email Notifications
-	In the UserComm.txt file, it is possible to specify various emails that can be notified about important events during your reaction. At the commencement of the program, it prompts the user to pick an email from the list specified in the file. The program will then send a notification to the specified email when either the reaction successfully completed or there was an error in the reaction. 
+*Email Notifications*
 
-Emergency Flows
-	Because of the dangerous nature of some reactions, it is important that if anything goes wrong the program is able to detect it and correct for it before the situation becomes more dangerous. The two main cases that the program accounts for in terms of error handling of flows is if a flow does not reach the specified flow or over shoots the expected flow. Both can be dangerous. 
-	Some possible causes could be a flow that is above the maximum of the controller, a controller malfunction, or a canister of gas runs low. Regardless of the cause, it is useful to be able to have a set of flow rates that will be switched to in case of a reaction failure.
+In the UserComm.txt file, it is possible to specify various emails that can be notified about important events during your reaction. At the commencement of the program, it prompts the user to pick an email from the list specified in the file. The program will then send a notification to the specified email when either the reaction successfully completed or there was an error in the reaction. 
 
-Logging
-	Accurate logs with Timestamps are important in chemistry research, specifically for process validation and for cross referencing to other systems in use. For example, the research for which this software was developed used a GC-MS afterwards, so it was helpful to be able to know the time that the flows changed to cross reference with the GC.
+*Emergency Flows*
 
-Multiple Reaction Files
-	Allowing for multiple reaction files in the Reactions folder helps in creating a more accurate and efficient process for reactions for a researcher. Being able to create reaction files ahead of time saves time for the researcher and increase the overall usability of the system.
+Because of the dangerous nature of some reactions, it is important that if anything goes wrong the program is able to detect it and correct for it before the situation becomes more dangerous. The two main cases that the program accounts for in terms of error handling of flows is if a flow does not reach the specified flow or over shoots the expected flow. Both can be dangerous. 
+
+Some possible causes could be a flow that is above the maximum of the controller, a controller malfunction, or a canister of gas runs low. Regardless of the cause, it is useful to be able to have a set of flow rates that will be switched to in case of a reaction failure.
+
+*Logging*
+
+Accurate logs with Timestamps are important in chemistry research, specifically for process validation and for cross referencing to other systems in use. For example, the research for which this software was developed used a GC-MS afterwards, so it was helpful to be able to know the time that the flows changed to cross reference with the GC.
+
+*Multiple Reaction Files*
+
+Allowing for multiple reaction files in the Reactions folder helps in creating a more accurate and efficient process for reactions for a researcher. Being able to create reaction files ahead of time saves time for the researcher and increase the overall usability of the system.
 
 
 ## Installation and Configuration
 This section describes how to download the software package to your local computer and how to configure the different settings files for use of the program.
 
-Installing From Github
+**Installing From Github**
 Go to the github page with the software: https://github.com/Ethan4242/Autonomous-Flow-Monitoring-System or search for the Autonomous Flow Monitoring System on github
 
 Download the files to your local computer
@@ -48,15 +55,16 @@ Download the zip file and extract it into the desired place on your computer (Th
 Git clone the files onto your computer by navigating to the folder you would you like to save the files in terminal (or command prompt for Windows), then copy the link in the clone or download box, then type in terminal (for example)..
 git clone https://github.com/Ethan4242/Autonomous-Flow-Monitoring-System.git
 
-Confirming Correct Python Version
-	This project can be used with any variant of python 3.x. To ensure that python is installed correctly and is the right version..
+**Confirming Correct Python Version**
 
-Type “python -V” into terminal or command prompt
-If the computer says that it does not recognize the command “python”, this means that python is either not installed correctly or is not installed at all. I would recommend searching the web for how to install the newest 3.x version of python. 
-For Windows users, the main trick when installing python is ensuring that the correct PATH to python is specified for the OS.
-If the computer outputs a Python version but it is 2.x, then this means you have the older version of python, which does not work with this program. I would recommend searching the web for a way of updating to the newer version.
+This project can be used with any variant of python 3.x. To ensure that python is installed correctly and is the right version..
 
-### Configuring your AFMS System
+  * Type “python -V” into terminal or command prompt
+  * If the computer says that it does not recognize the command “python”, this means that python is either not installed correctly or is not installed at all. I would recommend searching the web for how to install the newest 3.x version of python. 
+  * For Windows users, the main trick when installing python is ensuring that the correct PATH to python is specified for the OS.
+  * If the computer outputs a Python version but it is 2.x, then this means you have the older version of python, which does not work with this program. I would recommend searching the web for a way of updating to the newer version.
+
+#### Configuring your AFMS System
 This section will describe what should be put into the Settings Folder of the software package. 
 
 *Filenames.txt*
@@ -76,22 +84,33 @@ If you do not wish to move around the file storage structure of this software, t
 
 This is an important file for this software package! This file contains the node address of each microcontroller, the maximum flow for each controller, and the user specified name for each controller. Please note: Any controller you indicate here, also needs to be added to the Reactions file, but that will be for a later section.
 
-Initialize each controller as specified below..
+Initialize each controller as specified below.. (Without 2 newlines, only need one)
   Name 1: CO2
+  
   Port 1:  COM3
+  
   Node 1: 10
+  
   Max Flow 1: 100 
+  
   Name 2: O2
+  
   Port 2: COM6
+  
   Node 2: 20
+  
   Max Flow 2: 30
+  
   ………
 
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
 *_Name:_* This is the user defined name and will be used to refer to this controller for remainder of the program.
+
 *_Port:_* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
+
 *_Node:_* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
+
 *_Max Flow:_* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
 
 
@@ -131,16 +150,16 @@ The times in the first row is the time elapsed since the reaction started in fra
 
 The flows below a given elapsed time are the flows the controllers will switch to after that amount of time has elapsed since the reaction started. Each controller needs a flow during every specified time, even if it is just 0. If a flow is not specified, then the program will not be able to read the file.
 
-### Running a Reaction
+#### Running a Reaction
 
 *_Executing Program_*
 
 At the point of writing this manual, the only way of running this program is via the command line. Thus to execute the program, you will need to navigate to the folder containing Reaction.py. 
 For example, the sequence might be for a Windows user..
 
-* “Dir”
-“Cd Desktop”
-“Dir”
-“Cd FlowSoftware”
+  * “Dir”
+  * “Cd Desktop”
+  * “Dir”
+  * “Cd FlowSoftware”
 
-	To Execute the software, you need to type: “python Reaction.py”. Then the software will begin and start prompting the user for various settings that it will need to begin the reaction.
+To Execute the software, you need to type: “python Reaction.py”. Then the software will begin and start prompting the user for various settings that it will need to begin the reaction.
