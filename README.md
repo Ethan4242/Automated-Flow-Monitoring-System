@@ -126,9 +126,7 @@ This section describes how to format your Reaction file to be run by the softwar
 The file must be saved in the location specified in the filenames.txt file. The rest of this manual will assume that the file is saved in the default location: ./Reactions.
 
 #### Formatting The Reaction Input File
-Below is a sample Reaction that is ready to be run. Please note that the format needs to be identical to this format for the program to be able to read the file. Additionally, make sure to save the file as a .csv file.
-
-
+Below is a sample Reaction that is ready to be run. Please note that the format needs to be identical to this format for the program to be able to read the file. Additionally, make sure to save the file as a .csv file. (See an example file in the Reactions folder).
 
 **_Headings_**
 
