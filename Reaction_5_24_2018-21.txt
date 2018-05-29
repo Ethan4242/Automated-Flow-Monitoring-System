@@ -1,0 +1,20 @@
+*** (Actual Time: 2018-05-24 10:59:57.067476)
+Time: 0.0..
+NO: 0.0 O2: 0.0 C3H6: 0.0 N2: 5.0 EtCl: 0.0 CO2: 0.0 
+Time: 0.0333..
+NO: 0.0 O2: 0.0 C3H6: 0.0 N2: 110.0 EtCl: 0.0 CO2: 0.0 
+Time: 0.0666..
+NO: 0.0 O2: 0.0 C3H6: 0.0 N2: 15.0 EtCl: 0.0 CO2: 0.0 
+
+*** (Actual Time: 2018-05-24 11:00:00.665682)
+
+Starting reaction for file: ./Reactions/test.csv
+
+*** (Actual Time: 2018-05-24 11:00:04.478900)
+Flows successfully changed..
+ >>> After 0 hours, new flow rates are: NO: 0.0 O2: 0.0 C3H6: 0.0 N2: 5.0 EtCl: 0.0 CO2: 0.0
+
+*** (Actual Time: 2018-05-24 11:00:08.685141)
+Flows successfully changed..
+ >>> After 0.0 hours, new flow rates are: NO: 0.0 O2: 0.0 C3H6: 0.0 N2: 5.0 EtCl: 0.0 CO2: 0.0
+
