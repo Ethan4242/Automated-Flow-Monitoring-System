@@ -15,6 +15,8 @@ Sincerely,
 
 Ethan Young
 
+
+
 ## Notable Features
 Automated Mass Flow Changes
 	The main focus of this software project was to create an easy-to-use software system to control Bronkhorst Mass Flow Controllers. This software allows for the operation of these controllers in an arbitrary length series, and even allows for control across multiple ports. 
@@ -58,6 +60,7 @@ If the computer outputs a Python version but it is 2.x, then this means you have
 	This section will describe what should be put into the Settings Folder of the software package. 
 
 *Filenames.txt*
+
 	This file is used as the initialization file for the other files in the program. Its main purpose is to give more flexibility for another developer to change how files are accessed, how many are accessed, and where they are stored later on. If you would like to have the other files saved in a different location, then all you need to do is change the relative (to the python program) file path of each in this file. For example the defaults are as listed below..
 
 1) Reaction Inputs
@@ -69,33 +72,36 @@ If the computer outputs a Python version but it is 2.x, then this means you have
 
 If you do not wish to move around the file storage structure of this software, then leave this file as-is.
 
-BronkhorstConfig.txt
-	This is an important file for this software package! This file contains the node address of each microcontroller, the maximum flow for each controller, and the user specified name for each controller. Please note: Any controller you indicate here, also needs to be added to the Reactions file, but that will be for a later section.
-	Initialize each controller as specified below..
+*BronkhorstConfig.txt*
+
+This is an important file for this software package! This file contains the node address of each microcontroller, the maximum flow for each controller, and the user specified name for each controller. Please note: Any controller you indicate here, also needs to be added to the Reactions file, but that will be for a later section.
+
+Initialize each controller as specified below..
 
 Name 1: CO2 
 Port 1:  COM3
 Node 1: 10 
 Max Flow 1: 100 
 Name 2: O2 
-	Port 2: COM6
+Port 2: COM6
 Node 2: 20 
 Max Flow 2: 30
 ……….
 
 There can be an arbitrary number of controllers that are spread over an arbitrary number of communication ports
 
-Name: This is the user defined name and will be used to refer to this controller for remainder of the program.
-Port: This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
-Node: This is the port number specified by the Bronkhorst Controller system. It is in decimal.
-Max Flow: This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
+*Name:* This is the user defined name and will be used to refer to this controller for remainder of the program.
+*Port:* This is the communication port that the Controller is connected to. This can be the same across multiple controllers.
+*Node:* This is the port number specified by the Bronkhorst Controller system. It is in decimal.
+*Max Flow:* This is also a value specified by the unique microcontroller. The system will not explicitly ensure that the flow indicated by the user does not exceed this value, but there will be an error in the execution because the system will not be able to achieve this Max Flow.
 
-Settings/UserComm.txt
-	This file holds the emails that are options for the email notification feature. The program will prompt the user to specify which email to notify from the list in this file. The number of emails can be arbitrary, although only one can be notified on a given reaction.
+*Settings/UserComm.txt*
+
+This file holds the emails that are options for the email notification feature. The program will prompt the user to specify which email to notify from the list in this file. The number of emails can be arbitrary, although only one can be notified on a given reaction.
 
 
 ## Software Usage
-	This section describes how to format your Reaction file to be run by the software and then actually run the program. There can be an arbitrary number of reaction files, and the user is prompted to specify which one they would like to use once the program begins.
+This section describes how to format your Reaction file to be run by the software and then actually run the program. There can be an arbitrary number of reaction files, and the user is prompted to specify which one they would like to use once the program begins.
 
 Saving the File
 	The file must be saved in the location specified in the filenames.txt file. The rest of this manual will assume that the file is saved in the default location: ./Reactions.
